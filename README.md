@@ -19,7 +19,9 @@ TODO: sharing socket objects between process
 
 ## Installation
 Make sure MongoDB sever is installed locally and is running at default port 27017
+
 TODO: A config file for all IP address and port
+
 Create a virtual environment and install python packages
 
     >virtualenv pingpong
