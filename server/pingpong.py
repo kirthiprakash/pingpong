@@ -37,6 +37,8 @@ class PingPong(object):
                 self.end_connection_and_clean_up()
                 return None
 
+            # pick only the 1st word.
+            user_given_name = user_given_name.split(" ")[0]
             account = dao.findOne(Collection.Account.name, params={"_id": user_given_name})
 
             # New registration
@@ -66,7 +68,7 @@ class PingPong(object):
             break
 
         self.send_message(
-                'Welcome {}.\n Usage: @username Hello World!'.format(self.name.upper()))
+                'Welcome {}\n Usage: @username Hello World!'.format(self.name.upper()))
 
         # mapping connection and username in memory for some send quick prompt messages
         ip_address, port = self.connection.getpeername()
@@ -218,5 +220,5 @@ class PingPong(object):
         else:
             self.send_message("User {} is {}. Messages will be delivered once {}".format(recipient_name,
                                                                                          recipient_account.get(
-                                                                                                 "status")),
-                              Collection.Account.STATUS_ONLINE)
+                                                                                                 "status"),
+                                                                                         Collection.Account.STATUS_ONLINE))

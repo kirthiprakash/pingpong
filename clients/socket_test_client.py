@@ -7,7 +7,13 @@ import sys
 import struct
 from threading import Thread
 
-server_address = ('192.168.1.33', 5555)
+HOST = 'localhost'
+PORT = 5555
+print sys.argv
+if len(sys.argv) >= 2:
+    HOST = sys.argv[1]
+    PORT = int(sys.argv[2])
+server_address = (HOST, PORT)
 
 # Create a TCP/IP socket
 connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,16 +26,6 @@ except socket.error:
     server_address = ('192.168.1.33', 5556)
     print >> sys.stderr, 'connecting to %s port %s' % server_address
     connection.connect(server_address)
-
-# connection.settimeout(5)
-
-# Send messages on both sockets
-# for s in socks:
-#     formated_msg = struct.pack(">I", len(message)) + message
-#     print >> sys.stderr, '{}: sending {}'.format(s.getsockname(), formated_msg)
-#     s.sendall(formated_msg)
-
-# Read responses on both sockets
 
 running = True
 
