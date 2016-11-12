@@ -57,7 +57,7 @@ class MongoConnection(object):
     def insertOne(self, collection, params):
         return self.db[collection].insert(params)
 
-    def delete(self, collection, params=None):
+    def delete(self, collection, params={}):
         return self.db[collection].remove(params)
 
     def distinct(self, collection, key):
@@ -86,3 +86,7 @@ class Collection:
 
     class Message:
         name = "message"
+
+        STATUS_PENDING = "PENDING"
+        STATUS_SENT = "SENT"
+        STATUS_DUPLICATE = "DUPLICATE"

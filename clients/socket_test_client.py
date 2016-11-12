@@ -14,7 +14,12 @@ connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
 print >> sys.stderr, 'connecting to %s port %s' % server_address
-connection.connect(server_address)
+try:
+    connection.connect(server_address)
+except socket.error:
+    server_address = ('192.168.1.33', 5556)
+    print >> sys.stderr, 'connecting to %s port %s' % server_address
+    connection.connect(server_address)
 
 # connection.settimeout(5)
 
