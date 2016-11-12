@@ -4,6 +4,7 @@ A basic socket based chat server and client, written in python.
 
 ## Features
 - Handles new user registrations
+- Allows logins from multiple devices. Messages addressed will be delivered to all active connections
 - Persists messages addressed to offline users and sends it when they become available
 - Checks for duplicate messages
 
