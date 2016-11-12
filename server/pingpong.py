@@ -4,9 +4,8 @@ date: 11/11/16
 """
 import socket
 import struct, datetime
-from multiprocessing.reduction import reduce_handle, rebuild_handle
+from multiprocessing.reduction import reduce_handle
 from data_store import dao, Collection
-from ppong_queue import ppong_message_queue
 
 accounts = {}
 
