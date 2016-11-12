@@ -45,7 +45,7 @@ In an other terminal
     Usage: @username Hello World!
     ls
     dick, harry
-    @tom Hey!
+    @harry Hey! How are you?
     
  Harry's terminal
  
@@ -53,12 +53,12 @@ In an other terminal
      Usage: @username Hello World!
      ls
      tom, dick
-     tom (11/12/16 17:31:04): Hey!
+     tom (11/12/16 17:31:04): Hey! How are you?
      @tom whats up?!
      
 Tom's terminal
 
-      @tom Hey!
+      @dick Hey! How are you?
       dick (11/12/16 17:32:04): whats up?
       
  Messaging an OFFLINE user
