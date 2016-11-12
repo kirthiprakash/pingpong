@@ -65,3 +65,26 @@ Tom's terminal
  
      @jazz are you there?
      User jazz is OFFLINE. Messages will be delivered once ONLINE
+
+## Data models
+3 models are used
+### Account
+* _id (the username which will be unique)
+* last_login
+* status (ONLINE, OFFLINE)
+
+### Connection
+A mapping between user and their socket/connection information
+
+* username (maps to _id of Account)
+* reduced_connection (serialized version of socket object which can be used to get a reference of socket in a different process)
+* ip_address (IP address of client)
+* port (port address of client
+
+### Message
+* _id 
+* data
+* owner (maps to Account)
+* recipient (maps to Account)
+* status (PENDING, SENT, DUPLICATE)
+* timestamp
