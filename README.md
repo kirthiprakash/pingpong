@@ -45,7 +45,7 @@ In an other terminal
     Usage: @username Hello World!
     ls
     dick, harry
-    @tom Hey!
+    @harry Hey! How are you?
     
  Harry's terminal
  
@@ -53,15 +53,38 @@ In an other terminal
      Usage: @username Hello World!
      ls
      tom, dick
-     tom (11/12/16 17:31:04): Hey!
+     tom (11/12/16 17:31:04): Hey! How are you?
      @tom whats up?!
      
 Tom's terminal
 
-      @tom Hey!
+      @dick Hey! How are you?
       dick (11/12/16 17:32:04): whats up?
       
  Messaging an OFFLINE user
  
      @jazz are you there?
      User jazz is OFFLINE. Messages will be delivered once ONLINE
+
+## Data models
+3 models are used
+### Account
+* _id (the username which will be unique)
+* last_login
+* status (ONLINE, OFFLINE)
+
+### Connection
+A mapping between user and their socket/connection information
+
+* username (maps to _id of Account)
+* reduced_connection (serialized version of socket object which can be used to get a reference of socket in a different process)
+* ip_address (IP address of client)
+* port (port address of client
+
+### Message
+* _id 
+* data
+* owner (maps to Account)
+* recipient (maps to Account)
+* status (PENDING, SENT, DUPLICATE)
+* timestamp
