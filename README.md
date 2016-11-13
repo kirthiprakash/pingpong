@@ -12,7 +12,7 @@ A basic socket based chat server and client, written in python.
 
 The server is a multi threaded TCP server which can persist connections from client 
 and also handle mutiple clients simultaneously.
-Each request is processed and the message is stored in database (MongoDB) with message status 'PENDING'
+Each request is processed and the message is stored in database (MongoDB) with message status 'PENDING'. 
 A worker ~~process~~ picks up these 'PENDING' messages and routes it to the appropriate user and marks it as 'SENT'
 
 TODO: sharing socket objects between process
